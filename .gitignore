@@ -1,0 +1,12 @@
+# Ignore build outputs
+build/
+
+# IDF generated configs
+sdkconfig
+
+# Dependency lock and managed components
+dependencies.lock
+managed_components/
+
+# Misc
+*.log

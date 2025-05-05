@@ -1,5 +1,7 @@
 # Presplate
 
+![Switch Icon](images/switch.png)
+
 | Supported Targets | ESP32-C6 | ESP32-H2 |
 | ----------------- | -------- | -------- |
 
@@ -9,7 +11,8 @@ You need to git clone esp-idf as prerequisite https://github.com/espressif/esp-i
 
 At the bottom of the custom holder is one of these https://www.printables.com/model/1093182-arcade-buttons-182430mm-with-tiny-micro-switches
 
-```source esp-idf/export.sh
+```
+source esp-idf/export.sh
 ```
 This test code shows how to configure Zigbee end device and use it as HA to notify this device got switched on.
 It works with hubitat C7
@@ -38,7 +41,7 @@ Build the project, flash it to the board, and start the monitor tool to view the
 
 ## Switch Behavior
 
-The switch is normally closed when the device is docked, and it opens only when you lift it out of its holder (as shown above). This action powers up the ESP32, which immediately checks in with the coordinator. To ensure a successful check-in, the device waits up to 30 seconds for the coordinator to turn it back off.
+The switch is normally open when the device is docked, and it closes only when you lift it out of its holder (as shown above). This action powers up the ESP32, which immediately checks in with the coordinator. To ensure a successful check-in, the device waits up to 30 seconds for the coordinator to turn it back off.
 
 After first boot it will try to pair with coordinator.
 Everytime the device gets powered it will send 'switch-on' attriibute to the coordinator.
